@@ -379,9 +379,18 @@ box-shadow:  20px 20px 60px #080708,
     opacity: 1;
     pointer-events: initial;
     cursor: initial;
-  }
+  } 
 }
 
+
+
+.hero {
+  padding: 20px 0 60px 20px; 
+  margin-top: 3.5rem;
+  margin-bottom: 10px;
+  border-radius: 16px;
+  background-color: var(--container-color);
+}
 @media screen and (min-width: 1152px) {
   .container {
     margin-inline: auto;
@@ -448,7 +457,10 @@ box-shadow:  20px 20px 60px #080708,
     display: flex;
     flex-direction: row !important;
     width: 1440px;
-    margin: auto;
+    margin: auto; 
+    padding: 50px 0 60px 80px; 
+    
+  padding: 50px 0 60px 80px; 
     max-width: 100%;
   }
   .left-div, .right-div {
@@ -466,7 +478,6 @@ box-shadow:  20px 20px 60px #080708,
     order: 2; /* Change the order to control the position */
   }
   .hero {
-    padding: 20px;
     margin-top: 6.5rem !important;
     margin-bottom: 5rem;
     border-radius: 16px;
@@ -517,9 +528,20 @@ box-shadow:  20px 20px 60px #080708,
 
 .banner-titel{
   font-family: var(--body-font);
-  font-size: var(--medium-large-font-size);
+  font-size: 17px;
   color: var(--text-color-light);
   text-align: left;
+}
+
+@media screen and (min-width: 768px) {
+.banner-titel{
+  font-size: var(--medium-large-font-size);
+ }
+}
+@media screen and (max-width: 767px) {
+  svg#logo{
+    width: 89%;
+  }
 }
 .margin-xs-bottom{  
   margin-bottom: 23px;
@@ -575,12 +597,6 @@ box-shadow:  20px 20px 60px #080708,
   max-width: 100%;
 }
 
-.hero {
-  padding: 50px 0 60px 80px; 
-  margin-top: 3.5rem;
-  margin-bottom: 10px;
-  border-radius: 16px;
-}
 
 .crowdfund {
   padding: 10px;
