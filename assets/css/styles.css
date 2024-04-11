@@ -77,6 +77,10 @@ img {
   height: auto;
 }
 
+.neomorphism {  
+box-shadow:  20px 20px 60px #080708,
+-20px -20px 60px #1e1d1e;
+}
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
   max-width: 1440px;
@@ -612,14 +616,27 @@ img {
 .grid-element-title{
   text-align: center;
   margin-bottom: 11px;
-  font-family: var(--body-font);
+  font-family: var(--heading-font);
   font-size: var(--medium-large-font-size);
 }
 
 .grid-element {
   text-align: center;
 }
-  .grid-element-text {
+.socials .grid-element {
+  cursor: pointer;
+  z-index: 2;
+  transition: all .46s ease-in-out;
+  /*box-shadow: inset 30px 30px 80px rgba(0,0,0,0.5),inset -30px -30px 80px rgba(250,250,251,0.15)*/
+}
+.socials .grid-element:hover {
+  transform: scale(1.07);
+  z-index: 2;
+  
+box-shadow:  2px 2px 15px #080708,
+-2px -2px 15px #1e1d1e;
+}
+.grid-element-text {
     text-align: center;
   opacity: .7;
 }
@@ -759,6 +776,31 @@ ul.circle li:first-child{
 ul.circle li:last-child{
   font-style: italic;
   width: 480px;
+  padding-left: 28px;
+  position: relative;
+}
+ul.circle li:last-child:before{
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top:1px;
+  width: 21px;
+  height: 21px;
+  border-radius: 18px;
+  background: #4c8d23;
+}
+ul.circle li:last-child:after{
+  content: "";
+  display: block;
+  position: absolute;
+  left: 7px;
+  top:5px;
+  width: 4px;
+  height: 8px;
+  border-right: 2px solid #000;
+  border-bottom: 2px solid #000;
+  transform: rotate(45deg);
 }
 
 ul.circle li::marker{
