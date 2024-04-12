@@ -1270,7 +1270,6 @@ ul.circle li:last-child:after{
 /* Timeline-2*/
 
 main.timeline-2 {
-  overflow: hidden;
   min-width: 300px;
   max-width: 1024px;
   margin: auto;
@@ -1394,7 +1393,11 @@ content: "";
   padding-bottom: 60px;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 767px){
+
+main.timeline-2 {
+  overflow: hidden;
+}
   .nav{
     padding: 0 12px;
   }
