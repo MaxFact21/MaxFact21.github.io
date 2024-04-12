@@ -340,7 +340,7 @@ A Z U P O B X C Y S F Q E R T H J K O
                     <div class="grid-element neomorphism">
                         <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M480-164.157 152.31-418.771l49.076-37.691L480-240.771l278.614-215.691 49.076 37.691L480-164.157Zm0-177.383L152.31-596.154 480-850.767l327.69 254.613L480-341.54Zm0-254.614Zm0 178 230-178-230-178-230 178 230 178Z"/></svg>
                         <div class="grid-element-title">
-                            Layer 1 - Proof of Useful Work (PoUW)
+                            Layer 1 - Proof of Work
                         </div>
                         <div class="grid-element-text">
                             FACT0RN is utilizing and improving upon unyielding security and decentralization
@@ -361,7 +361,7 @@ A Z U P O B X C Y S F Q E R T H J K O
                             Target Blocktime of 30min
                         </div>
                         <div class="grid-element-text">
-                            TBD: Warum ist eine Blocktime von 30min ideal fpr FACT0RN und welche Vorteile ergeben sich daraus?
+                            Automatic difficulty adjustment mechanism is employed to maintain a target block time of 30 minutes
                         </div>
                     </div>  
                     <div class="grid-element neomorphism">
@@ -379,7 +379,7 @@ A Z U P O B X C Y S F Q E R T H J K O
                             Unlimited supply
                         </div>
                         <div class="grid-element-text">
-                            TBD: Was ist gut an unlimited supply welche Gründe stecken dahinter was sorgt für eine konrtollierte angemesse inflation?
+                            The reward for factoring is proportion to the work for factoring but scaled down to avoid excessive inflation and register overflows
                         </div>
                     </div>  
                     <div class="grid-element neomorphism">
@@ -506,13 +506,14 @@ A Z U P O B X C Y S F Q E R T H J K O
             <section class="hero margin-s-top neomorphism">
                 <div class="left-div">
                     <div class="banner-titel margin-xs-bottom">
-                        Tokenomics                  
+                        Blockheader Structure & Validation                
                     </div>
                     <div  class="banner-support-small">
-                        A Balancing Act of Reward and Difficulty
+                        xxxxxxxxxxxxxxxxxxxxxxxx
                     </div>
                     <div class="_banner-note">
-                        The Fact0rn tokenomics model is built around a unique difficulty adjustment mechanism based on prime factorization. The key takeaway is that the difficulty of mining roughly increases 6-9 times for every doubling of the block reward. This intricate design aims to balance inflation and scarcity, ensuring long-term network sustainability.
+                        FACT0RN employs an automatic difficulty adjustment mechanism to maintain a target block time of 30 minutes. 
+                        This mechanism ensures the network remains secure and discourages malicious activities by adapting the difficulty based on the observed block times.
                     </div><br>
                     
                     <div class="margin-m-bottom" style="opacity: .5;">
@@ -520,45 +521,105 @@ A Z U P O B X C Y S F Q E R T H J K O
                     </div>
                     <div class="flex">
                         <div class="col">
-                            <div class="headline-2"><span>1 </span>Factorization Difficulty</div>
+                            <div class="headline-2"><span>1 </span>Previous Block Hash</div>
                             <ul class="circle">
-                                <li>Prime factorization time doubles roughly every 16 bits (5 decimal digits).</li>
-                                <li>This means mining becomes progressively harder as larger prime numbers need to be factored.</li>
+                                <li>A reference to the previous block, establishing the chain's chronological order</li>
+                                <li>xxxxxxxxxxxxxx</li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            <div class="headline-2"><span>2 </span>Merkle Root Hash</div>
+                            <ul class="circle">
+                                <li>A condensed representation of all transactions within the block, ensuring data integrity</li>
+                                <li>xxxxxxxxxxxxxx</li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            <div class="headline-2"><span>3 </span>Version</div>
+                            <ul class="circle">
+                                <li>Identifies the software version used to create the block, allowing for future upgrades without breaking compatibility</li>
+                                <li>xxxxxxxxxxxxxx</li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            <div class="headline-2"><span>4 </span>Timestamp</div>
+                            <ul class="circle">
+                                <li>Records the time the block was created</li>
+                                <li>xxxxxxxxxxxxxx</li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            <div class="headline-2"><span>5 </span>Nonce</div>
+                            <ul class="circle">
+                                <li>A random number used in the mining process</li>
+                                <li>xxxxxxxxxxxxxx</li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            <div class="headline-2"><span>6 </span>wOffset</div>
+                            <ul class="circle">
+                                <li>The offset value used to locate the semiprime within the search range</li>
+                                <li>xxxxxxxxxxxxxx</li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            <div class="headline-2"><span>6 </span>nP1</div>
+                            <ul class="circle">
+                                <li>The smallest prime factor of the strong semiprime found by the miner.</li>
+                                <li>xxxxxxxxxxxxxx</li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                </div>
+                <video id="intro-video" class="hide-mobile" playsinline autoplay muted loop style="opacity: .14; filter: blur(5px);">
+                    <source src="abstract-blocks.webm" type="video/webm">
+                  </video>
+            </section>
+
+            <section class="hero margin-s-top neomorphism">
+                <div class="left-div">
+                    <div class="banner-titel margin-xs-bottom">
+                        Tokenomics                  
+                    </div>
+                    <div  class="banner-support-small">
+                        A Balancing Act of Reward and Difficulty
+                    </div>
+                    <div class="_banner-note">
+                        The combined effect of these factors leads to a 6-9 fold increase in mining difficulty for every reward doubling Lorem impus blablabla.
+                    </div><br>
+                    
+                    <div class="margin-m-bottom" style="opacity: .5;">
+                        Breakdown of the Key Elements:
+                    </div>
+                    <div class="flex">
+                        <div class="col">
+                            <div class="headline-2"><span>1 </span>Mining Time</div>
+                            <ul class="circle">
+                                <li>Prime factorization time doubles roughly every 16 bits (5 decimal digits)</li>
+                                <li>This means mining becomes progressively harder as larger prime numbers need to be factored. (placed wrong)</li>
                             </ul>
                         </div>
                         <div class="col">
                             <div class="headline-2"><span>2 </span>Block Reward</div>
                             <ul class="circle">
-                                <li>Doubles every 64 bits of difficulty increase.</li>
+                                <li>Blockrewards doubles every 64 bits of difficulty increase.</li>
                                 <li>Incentivizes miners to contribute computational power to the network.</li>
                             </ul>
                         </div>
                         <div class="col">
                             <div class="headline-2"><span>3 </span>Sieving Difficulty</div>
                             <ul class="circle">
-                                <li>Increases alongside the prime number size, doubling every several bits.</li>
+                                <li>Increases alongside the prime number size, doubling every ~8 bits.</li>
                                 <li>Adds another layer of complexity to the mining process.</li>
                             </ul>
                         </div>
                         <div class="col">
-                            <div class="headline-2"><span>4 </span>Difficulty Adjustment</div>
+                            <div class="headline-2"><span>4 </span>Resource Rate</div>
                             <ul class="circle">
-                                <li>The combined effect of these factors leads to a 6-9 fold increase in mining difficulty for every reward doubling.</li>
+                                <li>Prime factorization work doubles roughly every 16 bits (5 decimal digits)</li>
                                 <li>This helps to control inflation and maintain a steady supply of FACT tokens over time.</li>
-                            </ul>
-                        </div>
-                        <div class="col">
-                            <div class="headline-2"><span>5 </span>FACT0RN Explorer</div>
-                            <ul class="circle">
-                                <li>Provides real-time insights into the network's health, including block difficulty, reward, and network hash rate.</li>
-                                <li>Allows users to track their mining activity and monitor the overall token distribution.</li>
-                            </ul>
-                        </div>
-                        <div class="col">
-                            <div class="headline-2"><span>6 </span>Whitepaper</div>
-                            <ul class="circle">
-                                <li>Offers a comprehensive explanation of the Fact0rn protocol and its economic model.</li>
-                                <li>Provides technical details on the factorization algorithm and sieving process.</li>
                             </ul>
                         </div>
                     </div>
