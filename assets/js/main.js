@@ -18,13 +18,13 @@ const dropdownItems = document.querySelectorAll('.dropdown__item')
 
 // 1. Select each dropdown item
 dropdownItems.forEach((item) =>{
-    const dropdownButton = item.querySelector('.dropdown__button') 
+    const dropdownButton = item.querySelector('.dropdown__button')
 
     // 2. Select each button click
     dropdownButton.addEventListener('click', () =>{
         // 7. Select the current show-dropdown class
         const showDropdown = document.querySelector('.show-dropdown')
-        
+
         // 5. Call the toggleItem function
         toggleItem(item)
 
@@ -76,6 +76,36 @@ addEventListener('resize', removeStyle)
 /*=============== API ACCESS STATISTICS ===============*/
 
 $(document).ready(function() {
+
+//slider
+$('.slick').slick({
+  infinite: false,
+  slidesToShow: 2,
+  arrows:false,
+  dots:true,
+  slidesToScroll: 1,
+
+  responsive: [
+    {
+      breakpoint: 960,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1
+      }
+    },
+    {
+      breakpoint: 800,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]
+});
+
+
+
+
     // Combined AJAX requests
     const endpoints = [
       { url: "https://explorer.fact0rn.io/ext/getsummary", id: "GET_DIFFICULTY", property: "difficulty" },
@@ -86,13 +116,13 @@ $(document).ready(function() {
       { url: "https://explorer.fact0rn.io/ext/getsummary", id: "HASHRATE", property: "hashrate" },
       { url: "https://explorer.fact0rn.io/ext/getsummary", id: "PRICE", property: "lastPrice" }
     ];
-  
+
     // Create a single error handler to avoid redundancy and improve maintainability
     const handleError = (endpoint, jqXHR, textStatus, errorThrown) => {
       console.error(`Error fetching data from ${endpoint.url}:`, textStatus, errorThrown);
       $(`#${endpoint.id}`).text("Error: Could not fetch data.");
     };
-  
+
     // Use Promise.all to handle multiple AJAX requests concurrently and improve performance
     Promise.all(endpoints.map(endpoint =>
       $.ajax({
@@ -112,32 +142,32 @@ $(document).ready(function() {
     ))
     .catch(error => console.error("Error handling AJAX requests:", error));
   });
-  
+
 /*=============== API AJAX ACCESS WALLET BALANCE ===============*/
 $(document).ready(function () {
     // Function to perform the calculation
     function calculateDonatedAmount(balance, marketLastPrice) {
       return (balance * marketLastPrice).toFixed(2);
     }
-  
+
     // Function to update the progress bar
     function updateProgressBar(progressBarId, percentageElemId, donatedAmountElemId, valueInDollars, goal) {
       const donatedPercentage = (valueInDollars / goal) * 100;
-  
+
       const progressBar = $(`#${progressBarId}`);
       progressBar.find('.progress-bar-inner').css('width', `${donatedPercentage > 100 ? 100 : donatedPercentage}%`);
-  
+
       $(`#${percentageElemId}`).text(`${Math.floor(donatedPercentage)}% - `);
       $(`#${donatedAmountElemId}`).text(`${valueInDollars} $ / ${goal} $`);
     }
-  
+
     // Fetch initial wallet balance from Wallet1
     $.ajax({
       url: 'https://explorer.fact0rn.io/ext/getbalance/fact1qm3nvrxdj0v8v0ecchjprvkt72tja3fvj6vu2hm',
       cache: false,
       success: function (balanceHtml) {
         const initialWalletBalance = parseFloat(balanceHtml);
-  
+
         // Fetch market last price
         $.ajax({
           url: 'https://xeggex.com/market/FACT_USDT',
@@ -146,10 +176,10 @@ $(document).ready(function () {
             // Extract the market last price using jQuery
             const marketLastPriceText = $(data).find('span.marketlastprice').text();
             const marketLastPrice = parseFloat(marketLastPriceText).toFixed(2);
-  
+
             // Update progress bar for Wallet1
             updateProgressBar('PROGRESSBAR_WALLET1', 'PERCENTAGE_WALLET1', 'DONATED_AMOUNT_WALLET1', calculateDonatedAmount(initialWalletBalance, marketLastPrice), 50000);
-  
+
             // Make the third AJAX request to get the wallet balance for Wallet2
             $.ajax({
               url: 'https://apilist.tronscanapi.com/api/account/wallet?address=TSeMpubcvgaQtxZJyaUjKVjEVRK9CqxwJW&asset_type=1',
@@ -158,7 +188,7 @@ $(document).ready(function () {
                 const balance = parseFloat(data.data[1].balance);
                 const goalBalance3 = 50000;
                 $('#Wallet-Balance3').text(balance.toFixed(2));
-  
+
                 // Update progress bar for Wallet2
                 updateProgressBar('PROGRESSBAR_WALLET2', 'PERCENTAGE_WALLET2', 'DONATED_AMOUNT_WALLET2', calculateDonatedAmount(balance, 1), goalBalance3, 'USDT');
               },
@@ -174,7 +204,7 @@ $(document).ready(function () {
                   const balance = parseFloat(data.result);
                   const goalBalance3 = 50000;
                   $('#Wallet-Balance3').text(balance.toFixed(2));
-              
+
                   // Update progress bar for WALLET3
                   updateProgressBar('PROGRESSBAR_WALLET3', 'PERCENTAGE_WALLET3', 'DONATED_AMOUNT_WALLET3', calculateDonatedAmount(balance, 1), goalBalance3, 'USDT');
                 },
