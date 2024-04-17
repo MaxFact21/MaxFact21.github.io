@@ -77,32 +77,55 @@ addEventListener('resize', removeStyle)
 
 $(document).ready(function() {
 
-//slider
-$('.slick').slick({
-  infinite: false,
-  slidesToShow: 2,
-  arrows:false,
-  dots:true,
-  slidesToScroll: 1,
+  //slider
+  $('.slick').slick({
+    infinite: false,
+    slidesToShow: 2,
+    arrows:false,
+    dots:true,
+    slidesToScroll: 1,
 
-  responsive: [
-    {
-      breakpoint: 960,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 1
+    responsive: [
+      {
+        breakpoint: 960,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 800,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
       }
-    },
-    {
-      breakpoint: 800,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1
-      }
-    }
-  ]
+    ]
+  });
+
+  //slider vertical
+  $('.slick-vertical').slick({
+    infinite: false,
+    vertical: true,
+    centerMode:true,
+    verticalSwiping: true,
+    slidesToShow: 3,
+    arrows:false,
+    dots:false,
+    slidesToScroll: 1
+  });
+
+
+  $('.linked-slick').slick({
+    dots: true,
+    arrows:false,
+    autoplay:true,
+    autoplaySpeed:5000
+  });
+
+$('.linked-slick').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+  $('.slick-vertical').slick('slickGoTo', nextSlide);
 });
-
 
 
 /* TEMP DEACTIVATED */
@@ -126,7 +149,7 @@ $('.slick').slick({
     };
 
     // Use Promise.all to handle multiple AJAX requests concurrently and improve performance
-    
+
     Promise.all(endpoints.map(endpoint =>
       $.ajax({
         url: endpoint.url,
@@ -144,10 +167,10 @@ $('.slick').slick({
       .catch(error => handleError(endpoint, error.jqXHR, error.textStatus, error.errorThrown))
     ))
     .catch(error => console.error("Error handling AJAX requests:", error));
-  
-  
+
+
   */
-  
+
   });
 
 /*=============== API AJAX ACCESS WALLET BALANCE ===============*/
