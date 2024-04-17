@@ -542,64 +542,72 @@ A Z U P O B X C Y S F Q E R T H J K O L N Z Q B E G H U M A T R J V P X I C
                         Blockheader Structure & Validation
                     </div>
                     <div  class="banner-support-small">
-                        xxxxxxxxxxxxxxxxxxxxxxxx
+                        Inside the FACT0RN Block
                     </div>
                     <div class="_banner-note">
-                        FACT0RN employs an automatic difficulty adjustment mechanism to maintain a target block time of 30 minutes.
-                        This mechanism ensures the network remains secure and discourages malicious activities by adapting the difficulty based on the observed block times.
+                        FACT0RN block headers stores essential information, including proof of the work miners 
+                        invested in factoring complex numbers called semiprimes.<br> 
+                        This allows the network to verify the legitimacy of each block and ensure the security of the FACT0RN blockchain.
                     </div><br>
 
                     <div class="margin-m-bottom" style="opacity: .5;">
-                        Breakdown of the Key Elements:
+                        Example of Block 116212:
                     </div>
                     <div class="flex">
                         <div class="col">
                             <div class="headline-2"><span>1 </span>Previous Block Hash</div>
                             <ul class="circle">
                                 <li>A reference to the previous block, establishing the chain's chronological order</li>
-                                <li>xxxxxxxxxxxxxx</li>
+                                <li>0x4b0a196639183e62797ef9c73e9ddba3ec91fa532fe0b4eee4aeec9be5898498</li>
                             </ul>
                         </div>
                         <div class="col">
                             <div class="headline-2"><span>2 </span>Merkle Root Hash</div>
                             <ul class="circle">
                                 <li>A condensed representation of all transactions within the block, ensuring data integrity</li>
-                                <li>xxxxxxxxxxxxxx</li>
+                                <li>0xeb7bd69fb0baa0dfc77b6a1ea3d0384431be7a632ad7e653dac4a7cce629c165</li>
                             </ul>
                         </div>
                         <div class="col">
                             <div class="headline-2"><span>3 </span>Version</div>
                             <ul class="circle">
                                 <li>Identifies the software version used to create the block, allowing for future upgrades without breaking compatibility</li>
-                                <li>xxxxxxxxxxxxxx</li>
+                                <li>0x20000000</li>
                             </ul>
                         </div>
                         <div class="col">
                             <div class="headline-2"><span>4 </span>Timestamp</div>
                             <ul class="circle">
                                 <li>Records the time the block was created</li>
-                                <li>xxxxxxxxxxxxxx</li>
+                                <li>2024-04-16T19:32:47+00:00</li>
                             </ul>
                         </div>
                         <div class="col">
                             <div class="headline-2"><span>5 </span>Nonce</div>
                             <ul class="circle">
                                 <li>A random number used in the mining process</li>
-                                <li>xxxxxxxxxxxxxx</li>
+                                <li>12568879157060278000</li>
                             </ul>
                         </div>
                         <div class="col">
                             <div class="headline-2"><span>6 </span>wOffset</div>
                             <ul class="circle">
                                 <li>The offset value used to locate the semiprime within the search range</li>
-                                <li>xxxxxxxxxxxxxx</li>
+                                <li>-6252</li>
                             </ul>
                         </div>
                         <div class="col">
-                            <div class="headline-2"><span>6 </span>nP1</div>
+                            <div class="headline-2"><span>7 </span>nP1</div>
                             <ul class="circle">
-                                <li>The smallest prime factor of the strong semiprime found by the miner.</li>
-                                <li>xxxxxxxxxxxxxx</li>
+                                <li>The smallest prime factor of the strong semiprime found by the miner</li>
+                                <li>117097282296349999473414052062571799059741302151464309271921</li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            <div class="headline-2"><span>8 </span>nBit</div>
+                            <ul class="circle">
+                                <li>The size of the strong semiprime miners has to factor to mine the block</li>
+                                <li>393</li>
                             </ul>
                         </div>
                     </div>
