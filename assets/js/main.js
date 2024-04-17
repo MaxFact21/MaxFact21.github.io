@@ -105,7 +105,9 @@ $('.slick').slick({
 
 
 
+/* TEMP DEACTIVATED */
 
+/*
     // Combined AJAX requests
     const endpoints = [
       { url: "https://explorer.fact0rn.io/ext/getsummary", id: "GET_DIFFICULTY", property: "difficulty" },
@@ -124,6 +126,7 @@ $('.slick').slick({
     };
 
     // Use Promise.all to handle multiple AJAX requests concurrently and improve performance
+    
     Promise.all(endpoints.map(endpoint =>
       $.ajax({
         url: endpoint.url,
@@ -141,6 +144,10 @@ $('.slick').slick({
       .catch(error => handleError(endpoint, error.jqXHR, error.textStatus, error.errorThrown))
     ))
     .catch(error => console.error("Error handling AJAX requests:", error));
+  
+  
+  */
+  
   });
 
 /*=============== API AJAX ACCESS WALLET BALANCE ===============*/
@@ -162,6 +169,7 @@ $(document).ready(function () {
     }
 
     // Fetch initial wallet balance from Wallet1
+    /*
     $.ajax({
       url: 'https://explorer.fact0rn.io/ext/getbalance/fact1qm3nvrxdj0v8v0ecchjprvkt72tja3fvj6vu2hm',
       cache: false,
@@ -222,4 +230,6 @@ $(document).ready(function () {
         console.error('AJAX request for WALLET2 failed:', status, error);
       }
     });
+
+    */
   });

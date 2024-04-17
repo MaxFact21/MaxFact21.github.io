@@ -79,9 +79,14 @@ img {
 }
 
 .neomorphism {
-box-shadow:  20px 20px 60px #080708,
--20px -20px 60px #1e1d1e;
-}
+  box-shadow:  20px 20px 60px #080708,
+  -20px -20px 60px #1e1d1e;
+  }
+  .neomorphism2 {
+  box-shadow:  12px 12px 40px #08070888,
+  -12px -12px 40px #1e1d1eaa;
+  background: #080708 !important;
+  }
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
   max-width: 1440px;
@@ -686,6 +691,9 @@ box-shadow:  20px 20px 60px #080708,
 .grid-container--fill3 {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
+.grid-container--fill4 {
+  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+}
 .grid-element-title{
   text-align: center;
   margin-bottom: 11px;
@@ -695,6 +703,26 @@ box-shadow:  20px 20px 60px #080708,
 
 .grid-element {
   text-align: center;
+}
+.team .grid-element {
+  position: relative;
+  overflow: visible !important;
+}
+  .team .grid-element:before,
+  .team .grid-element:after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  width: 0px;
+  height: 100px;
+  border-right: 2px dotted #fff;
+  opacity: .5;;
+}
+.team .grid-element:after {
+  top: 100%;
+  bottom: auto;
 }
 .socials .grid-element {
   cursor: pointer;
@@ -1166,7 +1194,6 @@ margin:0% 1%;
 .grid-element{
   padding: 2rem;
 }
-
 .key-facts svg{
   background: #000;
   margin: -27px 0 13px;
@@ -1272,6 +1299,39 @@ ul.circle li:last-child:after{
 }
 
 }
+
+.invert{
+  filter: invert(1);
+  
+  box-shadow: 20px 20px 60px #f6f6f6, -20px -20px 60px #fafafa;
+}
+.join a{
+  display: inline-block;
+  padding: 12px;
+  width: 59px;    
+  align-items: center;
+  align-content: center;
+  height: 59px;
+  border-radius: 50px;
+  margin: 36px 5px 0;
+  background: #000;
+  box-shadow: inset 10px 10px 10px #ffffff23;
+  transition: all .5s ease-in-out;
+}
+.join a:hover{
+  box-shadow: inset -10px -10px 15px #fff3;
+
+}
+.join a i{
+  line-height: 52px;
+  color:#fffb;
+  transition: all .5s ease-in-out;
+  font-size: 22px;
+}
+.join a:hover i{
+  color:#fff;
+}
+
 /* SLider */
 
 .slick{
