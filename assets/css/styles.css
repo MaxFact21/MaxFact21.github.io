@@ -112,6 +112,13 @@ img {
 
 }
 
+@media screen and (max-width: 767px){
+  .header {
+    border-radius: 16px;
+  
+  }
+}
+
 /*=============== NAV ===============*/
 .nav {
   height: var(--header-height);
@@ -910,6 +917,24 @@ ul.circle li:last-child:before{
   border-radius: 18px;
   background: var(--green);
 }
+
+.checked{
+  position: relative;
+  padding-left: 28px;
+  margin: 12px 0 6px;
+}
+  .checked:before{
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top:1px; 
+  width: 21px;
+  height: 21px;
+  border-radius: 18px;
+  background: var(--green);
+}
+.checked:after,
 ul.circle li:last-child:after{
   content: "";
   display: block;
@@ -1068,6 +1093,15 @@ ul.check li.not-done:after{
   width: fit-content;
 }
 
+@media screen and (max-width: 767px) {
+
+  .button-26 {
+    font-size: 14px;
+    line-height: 1.15;
+    padding: 12px 20px;
+  }
+}
+
 .button-26 i{
 margin-left: 7px;
 }
@@ -1137,6 +1171,7 @@ margin:0px 30px;
 font-size:2em;
 margin:0% 1%;
 }
+
 @media screen and (max-width: 767px) {
 
 .margin-xs-bottom{
@@ -1297,6 +1332,11 @@ ul.circle li:first-child{
   width: 480px;
 }
 
+@media screen and (max-width: 767px) {
+ul.circle li{
+  font-size: 13px !important;
+}
+}
 ul.circle li:last-child{
   font-style: italic;
   width: 480px;
@@ -1470,7 +1510,7 @@ pointer-events: none;
 .slick-vertical .slick-track{
   padding-top: 2rem;
 }*/ 
-pre{
+pre, .example{
   margin-top: .5rem;
   border: 1px solid #fff4;
   border-radius: 6px;
@@ -1490,7 +1530,13 @@ pre{
   color:#e5e4e2; 
   opacity: .7; 
   margin:12px 0 24px;
+  
 } 
+@media screen and (max-width: 767px) {
+  .block-header-desc{
+    font-size: 13px;
+  }
+}
 
 .slick-vertical{  
   background: rgb(0,0,0);
@@ -1643,7 +1689,11 @@ content: "";
   border-bottom: 0;
   padding-bottom: 60px;
 }
+.hero .banner-note,
+  .publication p{
+  opacity: .7;
 
+}
 @media screen and (max-width: 767px){
   .header {
     width: calc(100% - 32px)!important;
@@ -1690,3 +1740,7 @@ width: calc(100% + 30px);
       width: 90%;
     }
 }
+
+.break-string.break-string{
+  word-break: break-all !important;
+} 
