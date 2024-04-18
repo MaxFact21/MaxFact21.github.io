@@ -170,9 +170,9 @@ z-index: 999999999;
   .nav__menu {
     background-color: var(--body-color);
     position: absolute;
-    left: 0;
+    left: -20px;
     top: 2.5rem;
-    width: 100%;
+    width: calc(100% + 40px);
     height: calc(100vh - 3.5rem);
     overflow: auto;
     padding-block: 1.5rem 4rem;
@@ -742,6 +742,12 @@ z-index: 999999999;
   border-right: 2px dotted #fff;
   opacity: .5;;
 }
+
+@media screen and (max-width: 767px) {
+ .team{
+
+ }
+}
 .team .grid-element:after {
   top: 100%;
   bottom: auto;
@@ -1262,6 +1268,12 @@ margin:0% 1%;
 .grid-container--fill2 {
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
 }
+.team{
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+ .team .grid-element:before{
+  z-index: -1;
+}
 .socials .grid-element-picture {
   font-size: 16px;
 }
@@ -1381,8 +1393,31 @@ ul.circle li:last-child:after{
 
 .invert{
   filter: invert(1);
+}
+.invert.join i{
+  color: #bbb !important;
+}
+.invert.join a:hover i{
+  color: #fff !important;
+}
 
-  box-shadow: 20px 20px 60px #f6f6f6, -20px -20px 60px #fafafa;
+.invert.join a:hover i.fa-discord{
+  color: #c5a121 !important;
+  opacity: 1 !important;
+}
+.invert.join a:hover i.fa-github{
+  color: #5ceb84 !important;
+  opacity: 1 !important;
+}
+.invert.join a:hover i.fa-reddit{
+  color: #08bcff !important;
+  opacity: 1 !important;
+}
+
+.invert-box{
+  background: #fff;
+  color:#000e;
+
 }
 .join a{
   display: inline-block;
@@ -1561,7 +1596,8 @@ background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(35,35,35,.5) 65%, rgba(
 }
 .slick-vertical .slick-center{
   opacity: 1 !important;
-  border- : 1px solid #222;
+  border-top : 1px solid #333;
+  border-bottom: 1px solid #333;
   background-color: #ffffff05;
 }
 /* Timeline-2*/
@@ -1580,16 +1616,16 @@ main.timeline-2 .timeline-text {
 .timeline-2 > div {
   font-size: 1em;
   line-height: 1.75em;
-  border-top: 3px solid;
-  border-bottom: 3px solid;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
   border-color: #fff !important;
-  border-width: 3px;
+  border-width: 2px;
   margin: 0;
   padding:  48px;
   counter-increment: section;
   position: relative;
   width: 50%;
-  margin-top: -3px;
+  margin-top: -2px;
 }
 .timeline-2 .timeline-box{
 
@@ -1641,7 +1677,7 @@ content: "";
  left: calc(100% - 4px);
 }
 .timeline-2 > div:nth-child(even) {
-  border-right: 3px solid;
+  border-right: 2px solid;
   padding-left: 0;
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
@@ -1658,7 +1694,7 @@ content: "";
     margin-left: -20px;
 }
 .timeline-2 > div:nth-child(odd) {
-  border-left: 3px solid;
+  border-left: 2px solid;
   padding-right: 0;
   border-top-left-radius: 30px;
   border-bottom-left-radius: 30px;
