@@ -70,7 +70,8 @@ ul {
 
 a {
   text-decoration: none;
-  color: yellow;
+  /*color: yellow;*/
+  color: #fff;
 }
 
 img {
@@ -604,6 +605,43 @@ z-index: 999999999;
   text-align: left;
 }
 
+.listing-logos {
+  max-width: 80%;
+  margin: 80px auto 0;
+  display: grid;
+  gap:60px 90px ;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.listing-logos img.tangem{
+  height: 90px;;
+}
+.padding-d-box{
+  padding: 80px 20px !important;
+}
+@media screen and (max-width: 768px) {
+  .padding-d-box{
+    padding: 40px 24px !important;
+  }
+  .listing-logos {
+    max-width: 90%;
+    margin: 60px auto -40px;
+    gap:30px 50px ;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  }
+  
+.listing-logos img.tangem{
+  height: 66px;;
+}
+}
+
+.listing-logos img{
+  filter: grayscale(1);
+  transition: all .4s ease-in-out;
+}
+.listing-logos img:hover{
+  filter: grayscale(0);
+}
 @media screen and (min-width: 768px) {
 .banner-titel{
   font-size: var(--medium-large-font-size);
@@ -742,6 +780,17 @@ z-index: 999999999;
   border-right: 2px dotted #fff;
   opacity: .5;;
 }
+.team.donations .grid-element:before {
+  display: none;
+}
+
+.team.donations .grid-element {
+  opacity: 1 !important;
+  padding-top: 1rem;
+}
+.team.donations .grid-element-text {
+  opacity: 1 !important;
+}
 
 @media screen and (max-width: 767px) {
  .team{
@@ -847,8 +896,9 @@ box-shadow:  2px 2px 15px #080708,
 }
 
 .progress-bar {
-  height: 20px;
-  background-color: #eee;
+  margin-top: 20px;
+  height: 12px;
+  background-color: #eee2;
   border-radius: 16px;
   overflow: hidden;
   border-color: black;
@@ -856,7 +906,7 @@ box-shadow:  2px 2px 15px #080708,
 
 .progress-bar-inner {
   height: 100%;
-  background-color: #638D48;
+  background-color: var(--green);
   text-align: center;
   line-height: 20px;
   color: white;
@@ -900,8 +950,8 @@ ul.circle{
   color:#fffa;
 }
 ul.circle li:first-child{
-  margin-bottom: 12px;
-  font-size: 21px;
+  margin-bottom: 0;
+  font-weight: bold;
   max-width: 100%;
   width: 480px;
 }
@@ -909,19 +959,7 @@ ul.circle li:first-child{
 ul.circle li:last-child{
   font-style: italic;
   width: 480px;
-  padding-left: 28px;
   position: relative;
-}
-ul.circle li:last-child:before{
-  content: "";
-  display: block;
-  position: absolute;
-  left: 0;
-  top:1px;
-  width: 21px;
-  height: 21px;
-  border-radius: 18px;
-  background: var(--green);
 }
 
 .checked{
@@ -940,8 +978,7 @@ ul.circle li:last-child:before{
   border-radius: 18px;
   background: var(--green);
 }
-.checked:after,
-ul.circle li:last-child:after{
+.checked:after{
   content: "";
   display: block;
   position: absolute;
@@ -949,6 +986,34 @@ ul.circle li:last-child:after{
   top:5px;
   width: 4px;
   height: 8px;
+  border-right: 2px solid #000;
+  border-bottom: 2px solid #000;
+  transform: rotate(45deg);
+}
+.checked-big{
+  position: relative;
+  padding-left: 46px;  
+  margin: 32px 0 6px;
+}
+  .checked-big:before{
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top:-4px; 
+  width: 31px;
+  height: 31px;
+  border-radius: 18px;
+  background: var(--green);
+}
+.checked-big:after{
+  content: "";
+  display: block;
+  position: absolute;
+  left: 12px;
+  top:4px;
+  width: 6px;
+  height: 10px;
   border-right: 2px solid #000;
   border-bottom: 2px solid #000;
   transform: rotate(45deg);
