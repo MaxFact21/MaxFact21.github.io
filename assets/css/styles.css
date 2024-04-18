@@ -109,7 +109,7 @@ img {
   z-index: var(--z-fixed);
   border-bottom-left-radius: 16px;
   border-bottom-right-radius: 16px;
-
+z-index: 999999999;
 }
 
 @media screen and (max-width: 767px){
