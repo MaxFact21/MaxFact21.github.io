@@ -662,6 +662,9 @@ z-index: 999999999;
   .mobile-s-margin-top{
     margin-top: 24px !important;
   }
+  .mobile-l-margin-top{
+    margin-top: 54px !important;
+  }
 }
 .text-center{
   text-align: center !important;
