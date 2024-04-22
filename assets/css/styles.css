@@ -13,7 +13,7 @@
   --first-color-darken: rgba(5,5,5,.79);
   --title-color: #fff;
   --text-color: #E5E4E2;
-  --body-color: #131213;
+  --body-color: #000;
   --green: #19b149;
   --container-color: 	black;
   --contrast: rgba(5,5,5,.3);
@@ -84,9 +84,11 @@ img {
       background: var(--container-color);
 }
 .neomorphism {
-  box-shadow:  20px 20px 60px #080708,
+/*  box-shadow:  20px 20px 60px #080708,
   -20px -20px 60px #1e1d1e;
-
+*/
+background-color: #121212 !important;
+border:1px solid #23232399;
   }
   .neomorphism2 {
   box-shadow:  12px 12px 40px #08070888,
@@ -417,7 +419,7 @@ z-index: 999999999;
 }
 
 .hero {
-  padding: 20px 0 0px 20px;
+  padding: 20px 0 0px 0px;
   margin-top: 3.8rem;
   margin-bottom: 10px;
   border-radius: 16px;
@@ -531,8 +533,7 @@ z-index: 999999999;
     width: 1440px;
     margin: auto;
     padding: 50px 0 60px 80px;
-
-  padding: 50px 0 60px 80px;
+    padding: 50px 0 60px 0;
     max-width: 100%;
   }
   .left-div, .right-div {
@@ -631,7 +632,7 @@ z-index: 999999999;
   }
   
 .listing-logos img.tangem{
-  height: 66px;;
+  height: 66px;
 }
 }
 
@@ -808,11 +809,46 @@ z-index: 999999999;
   /*box-shadow: inset 30px 30px 80px rgba(0,0,0,0.5),inset -30px -30px 80px rgba(250,250,251,0.15)*/
 }
 .socials .grid-element:hover {
-  transform: scale(1.07);
+  transform: scale(.95);
   z-index: 2;
+}
 
-box-shadow:  2px 2px 15px #080708,
--2px -2px 15px #1e1d1e;
+.socials  .grid-element .grid-element-text{
+  transition: all .4s ease-in-out;
+}
+.socials  .grid-element .grid-element-text i{
+  transition: all .4s ease-in-out;
+}
+.socials  .grid-element:hover .grid-element-text{
+  opacity: 1 !important;
+}
+.socials  .grid-element:hover i.fa-discord{
+  color: #c5a121 !important;
+  opacity: 1 !important;
+  filter: invert(1);
+}
+.socials  .grid-element:hover i.fa-github{
+  color: #5ceb84 !important;
+  opacity: 1 !important;
+  filter: invert(1);
+}
+.socials  .grid-element:hover i.fa-reddit{
+  color: #08bcff !important;
+  opacity: 1 !important;
+  filter: invert(1);
+}
+.socials  .grid-element:hover i.fa-telegram{
+  color: #0084C8 !important;
+  opacity: 1 !important;
+}
+.socials  .grid-element:hover i.fa-telegram{
+  color: #0084C8 !important;
+  opacity: 1 !important;
+}
+.socials  .grid-element:hover i.fa-book,
+.socials  .grid-element:hover i.fa-x-twitter{
+  color: #fff !important;
+  opacity: 1 !important;
 }
 .grid-element-text {
     text-align: center;
@@ -934,7 +970,7 @@ box-shadow:  2px 2px 15px #080708,
 }
 .left-div, .right-div{
   flex: 1;
-  padding: 20px;
+  /*padding: 20px;*/
 }
 .col {
   flex: 1;
@@ -992,19 +1028,25 @@ ul.circle li:last-child{
 }
 .checked-big{
   position: relative;
+  padding: 0 0 38px;
   padding-left: 46px;  
-  margin: 32px 0 6px;
 }
-  .checked-big:before{
-  content: "";
-  display: block;
-  position: absolute;
-  left: 0;
-  top:-4px; 
-  width: 31px;
-  height: 31px;
-  border-radius: 18px;
-  background: var(--green);
+.checked-big:before{
+content: "";
+display: block;
+position: absolute;
+left: 0;
+top:-4px; 
+width: 31px;
+height: 31px;
+border-radius: 18px;
+background: var(--green);
+opacity: .5;
+transition: all 1.5s ease-in-out;
+}
+.checked-big:hover:before{
+opacity: 1;
+transition: all .4s ease-in-out;
 }
 .checked-big:after{
   content: "";
@@ -1594,7 +1636,7 @@ ul.circle li:last-child:after{
   }
 }
 
-.slick-vertical::before{  
+.slick-vertical::after{  
   content: "";
   display: block;
   position: absolute; 
@@ -1602,9 +1644,44 @@ ul.circle li:last-child:after{
   left: 0;
   right: 0;
   height: 50px;
-background: linear-gradient(0deg, rgba(18, 17, 18,0) 0%, rgba(18, 17, 18,1) 100%);
+  background: linear-gradient(0deg, rgba(18, 17, 18,0) 0%, rgba(18, 17, 18,1) 100%);
+  background: linear-gradient(0deg, rgba(0,0, 0,0) 0%, rgba(0, 0, 0,1) 100%);
 z-index: 111;
 pointer-events: none;
+}
+
+.slick-vertical:before{  
+  position: absolute;
+  bottom:calc(100% + 6px);
+  color: #fff9;
+  background-color: #ffffff15;
+  padding: 4px 8px;
+  font-size: 12px;
+  letter-spacing: .5px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-radius: 4px;
+  border-bottom-left-radius: 0;
+  content:"Block Header";
+}
+.badge{
+color: #fff9;
+background-color: #ffffff15;
+padding: 4px 8px;
+font-size: 12px;
+letter-spacing: .5px;
+border-top-left-radius: 4px;
+border-top-right-radius: 4px;
+border-radius: 4px;
+}
+
+.badge.connected{
+  display: block;
+  width: fit-content;
+  margin-top: 16px; 
+  margin-bottom: -9px; 
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
 }
 /*
 .slick-vertical .slick-track{
@@ -1613,7 +1690,7 @@ pointer-events: none;
 pre, .example{
   margin-top: .5rem;
   border: 1px solid #fff4;
-  border-radius: 6px;
+  border-radius: 4px;
   padding: 8px 12px;
   overflow: hidden;
   background: #ffffff11;
@@ -1640,7 +1717,7 @@ pre, .example{
 
 .slick-vertical{  
   background: rgb(0,0,0);
-background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(35,35,35,.5) 65%, rgba(0,0,0,0) 85%);
+background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(35,35,35,.5) 70%, rgba(0,0,0,0) 100%);
 }
 .slick-vertical .slick-slide{
   transition: all .5s ease-in-out;
