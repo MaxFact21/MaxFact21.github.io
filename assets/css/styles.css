@@ -56,7 +56,7 @@
 body {
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
-  background-color: var(--body-color);
+  background-image: var(--body-color);
   color: var(--text-color);
 }
 section.vh{
