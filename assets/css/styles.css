@@ -782,6 +782,13 @@ z-index: 999999999;
   font-size: var(--medium-large-font-size);
 }
 
+@media screen and (max-width: 767px) {
+  .grid-container--fill3b {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }.grid-container--fill3b .grid-element:nth-child(9)  {
+    display: none;
+  }
+}
 .grid-element {
   text-align: center;
 }
@@ -1424,7 +1431,7 @@ margin:0% 1%;
     flex:1;
   }
   .hero{
-    padding:20px 20px;
+    padding:20px 0px;
   }
 .bg-image{
   margin: -20px -20px -67px;
@@ -2083,7 +2090,7 @@ width: calc(100% + 30px);
     width: 100%;
     font-size: 13px;
     padding: 10px 12px 10px 12px;
-    margin: 15px 0 15px 0;
+    margin: 0;
   }
 }
 
