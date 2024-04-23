@@ -13,7 +13,7 @@
   --first-color-darken: rgba(5,5,5,.79);
   --title-color: #fff;
   --text-color: #E5E4E2;
-  --body-color: linear-gradient(to right bottom, #000000, #050304, #090609, #0c090e, #0d0d12, #0d0e13, #0d1015, #0d1116, #0d1116, #0d1116, #0e1016, #0e1016);
+  --body-color: linear-gradient(to right bottom, #000000, #000000, #000000, #000000, #050304, #090609, #0c090e, #0d0d12, #0d0e13, #0d1015, #0e1016, #0e1016);
   --green: #19b149;
   --container-color: 	black;
   --contrast: rgba(5,5,5,.3);
