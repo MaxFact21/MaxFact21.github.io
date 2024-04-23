@@ -18,7 +18,7 @@ showMenu('nav-toggle','nav-menu')
 
 
 $(document).ready(function() {
-  filterSelection('top');
+  filterSelection('general');
 })
 function searchFunction() {
   
