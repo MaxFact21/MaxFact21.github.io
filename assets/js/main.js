@@ -251,9 +251,9 @@ $(document).ready(function() {
   });
 
 
-/* TEMP DEACTIVATED */
 
-/*
+
+
     // Combined AJAX requests
     const endpoints = [
       { url: "https://explorer.fact0rn.io/ext/getsummary", id: "GET_DIFFICULTY", property: "difficulty" },
@@ -290,9 +290,6 @@ $(document).ready(function() {
       .catch(error => handleError(endpoint, error.jqXHR, error.textStatus, error.errorThrown))
     ))
     .catch(error => console.error("Error handling AJAX requests:", error));
-
-
-  */
 
   });
 
